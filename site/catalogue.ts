@@ -43,6 +43,7 @@ export const COMPONENTS: ComponentDoc[] = [
       { rule: 'When dataAbsentReason is set, the reason is shown in place of a value.', sources: [R4('valueset-data-absent-reason.html', 'DataAbsentReason'), R4('observation.html#invs', 'Observation invariant obs-6')] },
       { rule: 'A Quantity comparator is kept: "<5 mg/L" is never shown as "5 mg/L".', sources: [R4('datatypes.html#Quantity', 'Quantity.comparator')] },
       { rule: 'Every referenceRange is shown with its type, appliesTo and age when present.', sources: [R4('observation-definitions.html#Observation.referenceRange', 'Observation.referenceRange')] },
+      { rule: 'When there is no top-level value but there are components (for example a blood pressure panel, LOINC 85354-9), each component is shown with its code, value, unit, reference range and interpretation, by the same rules as the main value, including dataAbsentReason. Components have no status of their own in FHIR R4: an entered-in-error panel shows none of its components.', sources: [R4('observation-definitions.html#Observation.component', 'Observation.component'), R4('observation-vitalsigns.html', 'Blood pressure profile')] },
     ],
   },
   {

@@ -4,7 +4,7 @@
 
 Not a medical device and not for clinical use. These components are reference implementations for developers. Clinical rules are cited so you can check them, not so you can rely on them.
 
-React components that take FHIR R4 resources as props and render them by the clinical rules they cite.
+React components that take HL7® FHIR® R4 resources as props and render them by the clinical rules they cite.
 
 ![The docs site: patient banner, allergy banner, NEWS2 panel and vitals trend](docs/wardkit.gif)
 
@@ -20,7 +20,7 @@ npx shadcn@latest add https://raw.githubusercontent.com/Henrycarto/wardkit/main/
 npx shadcn@latest add https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/patient-banner.json
 ```
 
-Files land in `components/wardkit/` and `lib/wardkit/`. The only runtime dependencies are React and lucide-react; FHIR types come from `@types/fhir` as a dev dependency. Charts are plain SVG.
+Files land in `components/wardkit/` and `lib/wardkit/`, plus shadcn's `lib/utils.ts` (the `cn()` helper) if the project does not have one yet. Packages a component adds: `lucide-react` (icons) and `cn` (installed by shadcn's `utils` item; checked with shadcn 4.22 on Tailwind v4), and `@types/fhir` as a dev dependency. React is expected to be there already. Charts are plain SVG.
 
 ## Example
 
@@ -49,7 +49,7 @@ This renders "6.9 mmol/L" with a "Critically high" flag (text and icon, not only
 
 | Component | Takes | Rule it enforces |
 |---|---|---|
-| `LabResult` | `Observation` | The flag comes only from `interpretation` (H, L, HH, LL, A, N). `preliminary` is marked, `amended` and `corrected` are marked as changed, `entered-in-error` is never shown as a valid result, and a `dataAbsentReason` is shown in place of a value, never a blank or a zero. |
+| `LabResult` | `Observation` | The flag comes only from `interpretation` (H, L, HH, LL, A, N). `preliminary` is marked, `amended` and `corrected` are marked as changed, `entered-in-error` is never shown as a valid result, and a `dataAbsentReason` is shown in place of a value, never a blank or a zero. Values in `component` (blood pressure panels, LOINC 85354-9) are shown per component by the same rules. |
 | `VitalsTrend` | `Observation[]` | A missing reading, a `dataAbsentReason` or an entered-in-error reading breaks the line into a visible gap. Nothing is interpolated across a gap. Mixed codes or units are refused. |
 | `News2Panel` | `Observation[]` | NEWS2 (RCP 2017) from the latest reading of each parameter, read by LOINC code. A missing, stale or unreadable parameter makes the score incomplete and is named. Never scored from a guessed value; room air is never assumed. SpO2 scale 2 only when the caller turns it on. Rounded values are shown next to what was recorded. |
 | `AllergyBanner` | `AllergyIntolerance[]` | "No known allergies" only when a resource records it with a no-known code (SNOMED CT 716186003 and the six concepts under it, or the IPS absent-unknown codes). An empty list shows "No allergy information recorded", which looks different. `entered-in-error` is hidden, `refuted` is not shown as an allergy. |
@@ -64,6 +64,8 @@ Every component page on the docs site has a live example, the props, and each ru
 - HL7 Terminology: [v3 ObservationInterpretation](https://terminology.hl7.org/CodeSystem-v3-ObservationInterpretation.html), [DataAbsentReason](https://hl7.org/fhir/R4/valueset-data-absent-reason.html).
 - HL7 International Patient Summary: [Allergies and Intolerances value set, 2.0.1](https://hl7.org/fhir/uv/ips/STU2/ValueSet-allergies-intolerances-uv-ips.html) and [Absent or Unknown Allergies, 1.1.0](https://hl7.org/fhir/uv/ips/STU1.1/ValueSet-absent-or-unknown-allergies-uv-ips.html).
 - LOINC 2.82 and SNOMED CT International 2025-02-01, codes checked through the HL7 terminology server (tx.fhir.org).
+
+HL7, FHIR and the FHIR [FLAME DESIGN] are the registered trademarks of Health Level Seven International and their use does not constitute endorsement by HL7.
 
 ## Tests
 

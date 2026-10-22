@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import type { Observation } from 'fhir/r4';
 import { describe, expect, it } from 'vitest';
 import { LabResult } from '@/components/wardkit/lab-result';
@@ -71,6 +71,54 @@ describe('LabResult values and ranges', () => {
     delete o.valueQuantity;
     show(o);
     expect(screen.getByText('No value recorded.')).toBeInTheDocument();
+  });
+});
+
+describe('LabResult with values in components (blood pressure panel, 85354-9)', () => {
+  const bp = (name: string) => clone(fixture<Observation>(`${name}.json`));
+  const components = () => within(screen.getByRole('list', { name: 'Components' }));
+
+  it('shows each component with its code, value, unit, flag and reference range, and never "No value recorded"', async () => {
+    const { container } = show(bp('vitals-bp-panel'));
+    const items = within(screen.getByRole('list', { name: 'Components' })).getAllByRole('listitem');
+    expect(items).toHaveLength(2);
+    expect(within(items[0]!).getByText('Systolic blood pressure')).toBeInTheDocument();
+    expect(within(items[0]!).getByText('94 mmHg')).toBeInTheDocument();
+    expect(within(items[0]!).getByText('Low')).toBeInTheDocument();
+    expect(within(items[0]!).getByText('100 to 140 mmHg (Adult, at rest)')).toBeInTheDocument();
+    expect(within(items[1]!).getByText('Diastolic blood pressure')).toBeInTheDocument();
+    expect(within(items[1]!).getByText('58 mmHg')).toBeInTheDocument();
+    expect(within(items[1]!).getByText('Normal')).toBeInTheDocument();
+    expect(container).not.toHaveTextContent('No value recorded');
+    await expectNoAxeViolations(container);
+  });
+
+  it('shows the reason for a component without a value, and the other component normally', () => {
+    show(bp('vitals-bp-diastolic-absent'));
+    expect(components().getByText('128 mmHg')).toBeInTheDocument();
+    expect(components().getByText(/Not Performed\. Cuff deflated before the diastolic was read/)).toBeInTheDocument();
+  });
+
+  it('a component flagged with the absent reason "error" shows that reason, not a value', () => {
+    show(bp('vitals-bp-diastolic-error'));
+    expect(components().getByText(/Error\. Reading rejected: movement artefact/)).toBeInTheDocument();
+    expect(components().getAllByText(/mmHg$/)).toHaveLength(1);
+  });
+
+  it('a panel entered in error shows no component values (components have no status of their own in FHIR R4)', () => {
+    const { container } = show(bp('vitals-bp-entered-in-error'));
+    expect(screen.getByText('Entered in error')).toBeInTheDocument();
+    expect(container).not.toHaveTextContent('162');
+    expect(container).not.toHaveTextContent('101');
+    expect(screen.queryByRole('list', { name: 'Components' })).not.toBeInTheDocument();
+  });
+
+  it('a top-level value still wins over components', () => {
+    const o = bp('vitals-bp-panel');
+    o.valueString = 'see components';
+    show(o);
+    expect(screen.getByText('see components')).toBeInTheDocument();
+    expect(screen.queryByRole('list', { name: 'Components' })).not.toBeInTheDocument();
   });
 });
 

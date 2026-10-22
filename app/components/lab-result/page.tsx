@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { LabResult } from '@/components/wardkit/lab-result';
 import { bySlug } from '@/site/catalogue';
 import { Code, DocHeader, Example, PropsTable, Rules, Section } from '@/site/doc';
-import { LAB } from '@/site/fixtures';
+import { BP, LAB } from '@/site/fixtures';
 
 const doc = bySlug('lab-result')!;
 export const metadata: Metadata = { title: doc.name };
@@ -34,6 +34,12 @@ export default function Page() {
             <LabResult observation={LAB.creatinine} timeZone={tz} />
             <LabResult observation={LAB.kCorrected} timeZone={tz} />
             <LabResult observation={LAB.crpEie} timeZone={tz} />
+          </div>
+        </Example>
+        <Example title="Values in components: blood pressure panel" note="LOINC 85354-9 has no top-level value; each component is shown with its own value, flag and range. Right: the diastolic was not measured.">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <LabResult observation={BP.panel} timeZone={tz} />
+            <LabResult observation={BP.diastolicAbsent} timeZone={tz} />
           </div>
         </Example>
         <Example title="No value, and a value below a limit" note="dataAbsentReason shows the reason. A comparator is kept.">

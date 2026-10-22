@@ -1,4 +1,4 @@
-import type { Observation, ObservationReferenceRange } from 'fhir/r4';
+import type { Observation, ObservationComponent, ObservationReferenceRange } from 'fhir/r4';
 import { AlertTriangle, ArrowDown, ArrowUp, Ban, Check, ChevronsDown, ChevronsUp, Clock, Flag, PencilLine } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { INTERPRETATION, codings, conceptText, effectiveTime, formatDateTime, formatQuantity, unitText } from '@/lib/wardkit/fhir';
@@ -34,7 +34,7 @@ const TONE: Record<Tone, string> = {
 export interface LabFlag { code?: string; label: string; tone: Tone; icon: typeof ArrowUp }
 
 /** Flags come only from `interpretation`. The component never derives one from the reference range. */
-export function interpretationFlags(o: Observation): LabFlag[] {
+export function interpretationFlags(o: Pick<Observation, 'interpretation'>): LabFlag[] {
   return (o.interpretation ?? []).map((cc) => {
     const coding = codings(cc).find((c) => c.system === INTERPRETATION && c.code);
     const known = coding?.code ? INTERPRETATIONS[coding.code] : undefined;
@@ -67,7 +67,10 @@ function ageText(age: NonNullable<ObservationReferenceRange['age']>): string {
   return `age up to ${hi} ${unit}`;
 }
 
-function valueText(o: Observation): string | undefined {
+/** An Observation or one of its components: both carry value[x], dataAbsentReason, interpretation and referenceRange. */
+type Valued = Observation | ObservationComponent;
+
+function valueText(o: Valued): string | undefined {
   if (o.valueQuantity) return formatQuantity(o.valueQuantity);
   if (o.valueString !== undefined) return o.valueString;
   if (o.valueInteger !== undefined) return String(o.valueInteger);
@@ -76,8 +79,46 @@ function valueText(o: Observation): string | undefined {
   return undefined;
 }
 
-function hasUnsupportedValue(o: Observation): boolean {
+function hasUnsupportedValue(o: Valued): boolean {
   return [o.valueRange, o.valueRatio, o.valueSampledData, o.valueTime, o.valueDateTime, o.valuePeriod].some((v) => v !== undefined);
+}
+
+const hasAnyValue = (o: Valued) => valueText(o) !== undefined || hasUnsupportedValue(o);
+
+function absentText(absent: NonNullable<Valued['dataAbsentReason']>): string {
+  return [codings(absent).find((c) => c.display)?.display ?? codings(absent)[0]?.code, absent.text].filter(Boolean).join('. ') || 'reason not stated';
+}
+
+/** Value (or the reason there is none) and reference range: the same rules for the main value and for each component. */
+function ValueAndRange({ item, size }: { item: Valued; size: 'main' | 'component' }) {
+  const value = valueText(item);
+  const ranges = item.referenceRange ?? [];
+  return (
+    <>
+      {item.dataAbsentReason ? (
+        <p className="text-base">
+          <span className="font-medium">No value: </span>
+          {absentText(item.dataAbsentReason)}
+        </p>
+      ) : value !== undefined ? (
+        <p className={cn('font-semibold tabular-nums', size === 'main' ? 'text-2xl' : 'text-lg')}>{value}</p>
+      ) : (
+        <p className="text-base">{hasUnsupportedValue(item) ? 'This value type is not displayed by this component.' : 'No value recorded.'}</p>
+      )}
+      {ranges.length > 0 ? <Ranges ranges={ranges} /> : <p className="text-sm text-muted-foreground">No reference range given.</p>}
+    </>
+  );
+}
+
+function Ranges({ ranges, label = 'Reference range' }: { ranges: ObservationReferenceRange[]; label?: string }) {
+  return (
+    <dl className="text-sm">
+      <dt className="inline text-muted-foreground">{label}: </dt>
+      {ranges.map((r, i) => (
+        <dd key={i} className="inline">{i > 0 ? '; ' : ''}{formatRange(r)}</dd>
+      ))}
+    </dl>
+  );
 }
 
 function Badge({ tone, icon: Icon, children }: { tone: Tone; icon: typeof ArrowUp; children: ReactNode }) {
@@ -132,9 +173,8 @@ export function LabResult({ observation: o, timeZone, className }: LabResultProp
   }
 
   const flags = interpretationFlags(o);
-  const value = valueText(o);
-  const absent = o.dataAbsentReason;
-  const ranges = o.referenceRange ?? [];
+  // Panels such as blood pressure (85354-9) carry their values in components, not in value[x].
+  const components = !hasAnyValue(o) && o.component?.length ? o.component : undefined;
 
   return (
     <Shell title={title} time={time} className={className}>
@@ -150,25 +190,29 @@ export function LabResult({ observation: o, timeZone, className }: LabResultProp
           ))}
         </div>
       )}
-      {absent ? (
-        <p className="text-base">
-          <span className="font-medium">No value: </span>
-          {[codings(absent).find((c) => c.display)?.display ?? codings(absent)[0]?.code, absent.text].filter(Boolean).join('. ') || 'reason not stated'}
-        </p>
-      ) : value !== undefined ? (
-        <p className="text-2xl font-semibold tabular-nums">{value}</p>
+      {components ? (
+        <>
+          {o.dataAbsentReason && <p className="text-base"><span className="font-medium">No value: </span>{absentText(o.dataAbsentReason)}</p>}
+          <ul aria-label="Components" className="space-y-2">
+            {components.map((c, i) => {
+              const cFlags = interpretationFlags(c);
+              return (
+                <li key={i} className="border-t pt-2 first:border-t-0 first:pt-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-sm font-medium">{conceptText(c.code) ?? 'Unnamed component'}</span>
+                    {cFlags.map((f, j) => (
+                      <Badge key={j} tone={f.tone} icon={f.icon}>{f.label}</Badge>
+                    ))}
+                  </div>
+                  <ValueAndRange item={c} size="component" />
+                </li>
+              );
+            })}
+          </ul>
+          {o.referenceRange?.length ? <Ranges ranges={o.referenceRange} label="Reference range for the panel" /> : null}
+        </>
       ) : (
-        <p className="text-base">{hasUnsupportedValue(o) ? 'This value type is not displayed by this component.' : 'No value recorded.'}</p>
-      )}
-      {ranges.length > 0 ? (
-        <dl className="text-sm">
-          <dt className="inline text-muted-foreground">Reference range: </dt>
-          {ranges.map((r, i) => (
-            <dd key={i} className="inline">{i > 0 ? '; ' : ''}{formatRange(r)}</dd>
-          ))}
-        </dl>
-      ) : (
-        <p className="text-sm text-muted-foreground">No reference range given.</p>
+        <ValueAndRange item={o} size="main" />
       )}
     </Shell>
   );

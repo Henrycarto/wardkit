@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <h1 className="text-3xl font-semibold">wardkit</h1>
-      <p className="mt-2 text-lg">React components that take FHIR R4 resources as props and render them by the clinical rules they cite.</p>
+      <p className="mt-2 text-lg">React components that take HL7® FHIR® R4 resources as props and render them by the clinical rules they cite.</p>
       <p className="mt-4 rounded-md border-2 border-foreground p-3 text-sm font-medium">
         Not a medical device and not for clinical use. These components are reference implementations for developers.
         Clinical rules are cited so you can check them, not so you can rely on them.
@@ -39,7 +39,7 @@ export default function Home() {
       <Section title="Install">
         <p className="mb-2 text-sm">Each component installs on its own through the shadcn CLI, into a project with Tailwind and the shadcn <code className="font-mono">cn</code> helper.</p>
         <Code>{`npx shadcn@latest add ${REGISTRY}/news2-panel.json`}</Code>
-        <p className="mt-2 text-sm">The files land in <code className="font-mono">components/wardkit/</code> and <code className="font-mono">lib/wardkit/</code>. They depend on React, lucide-react and the types in <code className="font-mono">@types/fhir</code>, nothing else.</p>
+        <p className="mt-2 text-sm">The files land in <code className="font-mono">components/wardkit/</code> and <code className="font-mono">lib/wardkit/</code>. A component adds <code className="font-mono">lucide-react</code> and <code className="font-mono">cn</code> (installed by shadcn&apos;s <code className="font-mono">utils</code> item, which provides <code className="font-mono">cn()</code>), and <code className="font-mono">@types/fhir</code> as a dev dependency. React is expected to be there already.</p>
       </Section>
     </>
   );

@@ -29,6 +29,8 @@ import patientHuber from '@/fixtures/patient-huber.json';
 import patientMinimal from '@/fixtures/patient-minimal.json';
 import patientNovak from '@/fixtures/patient-birth-year.json';
 import heartRateNight from '@/fixtures/vitals-heart-rate-night.json';
+import bpPanel from '@/fixtures/vitals-bp-panel.json';
+import bpDiastolicAbsent from '@/fixtures/vitals-bp-diastolic-absent.json';
 
 const obs = (b: unknown) => ((b as Bundle).entry ?? []).map((e) => e.resource as Observation);
 
@@ -37,6 +39,7 @@ export const LAB = {
   glucose: labGlucose as unknown as Observation, wcc: labWcc as unknown as Observation, nitrite: labNitrite as unknown as Observation, lactate: labLactate as unknown as Observation,
   creatinine: labCreatinine as unknown as Observation, kCorrected: labKCorrected as unknown as Observation, crpEie: labCrpEie as unknown as Observation, kHaemolysed: labKHaemolysed as unknown as Observation,
 };
+export const BP = { panel: bpPanel as unknown as Observation, diastolicAbsent: bpDiastolicAbsent as unknown as Observation };
 export const HEART_RATE_NIGHT = obs(heartRateNight);
 export const NEWS2 = { huber: obs(news2Huber), normal: obs(news2Normal), copd: obs(news2Copd) };
 export const ALLERGY = {
