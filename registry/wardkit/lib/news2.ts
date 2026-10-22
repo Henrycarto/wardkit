@@ -2,8 +2,7 @@
  * NEWS2, the National Early Warning Score 2 (Royal College of Physicians, 2017).
  *
  * Two layers. `score` and the band functions are pure: seven numbers in, points and the clinical
- * response out (ported from the ward monitor; temperature now rounds on the decimal value, so
- * 36.05 is 36.1 and not 36.0). `news2FromObservations` reads FHIR R4
+ * response out (ported from the ward monitor). `news2FromObservations` reads FHIR R4
  * Observations by LOINC code and decides, per parameter, whether there is a value the score can
  * use. When any parameter is missing, stale or unreadable there is no total: a NEWS2 computed
  * from a guessed value is worse than none.

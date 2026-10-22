@@ -72,8 +72,8 @@ export function formatTime(d: Date, timeZone?: string): string {
 }
 
 /**
- * Round half away from zero to `places` decimals, on the decimal string rather than the binary
- * float, so 36.05 rounds to 36.1 (Math.round(36.05 * 10) / 10 gives 36).
+ * Round half away from zero to `places` decimals. Shifts the decimal point in the number's
+ * string form instead of multiplying, so the result does not depend on the binary product.
  */
 export function roundHalfUp(v: number, places = 0): number {
   const sign = v < 0 ? -1 : 1;

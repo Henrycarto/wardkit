@@ -24,8 +24,7 @@ describe('NEWS2 parameter bands', () => {
     expect(spo2Scale2Points(97, false)).toBe(0);
   });
 
-  it('temperature rounds on the decimal value: 36.05 is 36.1 and scores 0', () => {
-    // Math.round(36.05 * 10) / 10 is 36, which would score 1.
+  it('temperature rounds half up to one decimal: 36.05 is 36.1 and scores 0, 35.95 is 36.0 and scores 1', () => {
     expect(tempPoints(36.05)).toBe(0);
     expect(tempPoints(35.95)).toBe(1);
   });
