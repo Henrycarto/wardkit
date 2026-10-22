@@ -24,10 +24,13 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: 'wardkit', description: DESCRIPTION, images: [PREVIEW.url] },
 };
 
-/** The wardkit icon (public/icon.svg), drawn in the current text colour. */
+/**
+ * The wardkit icon (public/icon.svg), drawn in the current text colour. Shown at 32 px: on its
+ * 24-unit grid the squares only land on whole pixels at multiples of 32, so smaller sizes blur.
+ */
 function WardkitIcon() {
   return (
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-6 shrink-0 text-link">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-8 shrink-0 text-link">
       <rect x="3" y="3" width="7.5" height="7.5" rx="1.5" />
       <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" />
       <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" />
@@ -46,7 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         <header className="border-b">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
-            <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
+            <Link href="/" className="flex items-center gap-2.5 text-lg font-semibold">
               <WardkitIcon />
               wardkit
             </Link>
