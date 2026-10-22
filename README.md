@@ -1,3 +1,5 @@
+<img src="docs/icon.svg" width="48" height="48" alt="">
+
 # wardkit
 
 Not a medical device and not for clinical use. These components are reference implementations for developers. Clinical rules are cited so you can check them, not so you can rely on them.

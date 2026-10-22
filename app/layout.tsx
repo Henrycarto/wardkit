@@ -4,10 +4,38 @@ import type { ReactNode } from 'react';
 import { COMPONENTS } from '@/site/catalogue';
 import './globals.css';
 
+const DESCRIPTION = 'Clinical UI components for React that take FHIR R4 resources as props.';
+// Vercel sets VERCEL_PROJECT_PRODUCTION_URL at build time; Open Graph image URLs must be absolute.
+const SITE = process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000';
+const PREVIEW = { url: '/social-preview.png', width: 1280, height: 640, alt: 'wardkit' };
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE),
   title: { default: 'wardkit', template: '%s · wardkit' },
-  description: 'Clinical UI components for React that take FHIR R4 resources as props.',
+  description: DESCRIPTION,
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
+  },
+  openGraph: { title: 'wardkit', description: DESCRIPTION, type: 'website', images: [PREVIEW] },
+  twitter: { card: 'summary_large_image', title: 'wardkit', description: DESCRIPTION, images: [PREVIEW.url] },
 };
+
+/** The wardkit icon (public/icon.svg), drawn in the current text colour. */
+function WardkitIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-6 shrink-0 text-link">
+      <rect x="3" y="3" width="7.5" height="7.5" rx="1.5" />
+      <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" />
+      <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" />
+      <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5" />
+      <path d="M15.3 18.2h1l.9-2 1.3 3 .8-1h.5" strokeWidth="1.5" />
+    </svg>
+  );
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -18,7 +46,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         <header className="border-b">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
-            <Link href="/" className="text-lg font-semibold">wardkit</Link>
+            <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
+              <WardkitIcon />
+              wardkit
+            </Link>
             <a href="https://github.com/Henrycarto/wardkit" className="text-sm text-link underline-offset-4 hover:underline">GitHub</a>
           </div>
           <p className="border-t bg-muted px-4 py-2 text-center text-sm">
