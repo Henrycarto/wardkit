@@ -1,0 +1,74 @@
+{
+  "resourceType": "Observation",
+  "id": "lab-creatinine-amended",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Creatinine 118 umol/L, high. Amended after the first report.</div>"
+  },
+  "status": "amended",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "14682-9",
+        "display": "Creatinine [Moles/volume] in Serum or Plasma"
+      }
+    ],
+    "text": "Creatinine"
+  },
+  "subject": {
+    "reference": "Patient/huber"
+  },
+  "effectiveDateTime": "2026-10-21T00:40:00+02:00",
+  "issued": "2026-10-21T01:05:00+02:00",
+  "performer": [
+    {
+      "display": "Ward 4B laboratory (fictional)"
+    }
+  ],
+  "valueQuantity": {
+    "value": 118,
+    "unit": "µmol/L",
+    "system": "http://unitsofmeasure.org",
+    "code": "umol/L"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "H",
+          "display": "High"
+        }
+      ]
+    }
+  ],
+  "referenceRange": [
+    {
+      "low": {
+        "value": 45,
+        "unit": "µmol/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "umol/L"
+      },
+      "high": {
+        "value": 90,
+        "unit": "µmol/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "umol/L"
+      },
+      "text": "Adult female"
+    }
+  ]
+}

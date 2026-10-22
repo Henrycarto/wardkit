@@ -1,0 +1,48 @@
+{
+  "resourceType": "Patient",
+  "id": "huber",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Margarete Huber (fictional), female, born 14 March 1955. Ward 4B number W4B-000317.</div>"
+  },
+  "identifier": [
+    {
+      "use": "usual",
+      "system": "https://github.com/Henrycarto/wardkit/fixtures/sid/bed-label",
+      "value": "4B-03"
+    },
+    {
+      "use": "official",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          }
+        ]
+      },
+      "system": "https://github.com/Henrycarto/wardkit/fixtures/sid/mrn",
+      "value": "W4B-000317"
+    }
+  ],
+  "name": [
+    {
+      "use": "usual",
+      "given": ["Grete"],
+      "family": "Huber"
+    },
+    {
+      "use": "official",
+      "given": ["Margarete", "Anna"],
+      "family": "Huber"
+    },
+    {
+      "use": "maiden",
+      "given": ["Margarete"],
+      "family": "Steiner"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1955-03-14"
+}

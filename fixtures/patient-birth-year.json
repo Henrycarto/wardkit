@@ -1,0 +1,24 @@
+{
+  "resourceType": "Patient",
+  "id": "novak",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Sabine Novak (fictional), birth year 1981 only.</div>"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "https://github.com/Henrycarto/wardkit/fixtures/sid/mrn",
+      "value": "W4B-000391"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": ["Sabine"],
+      "family": "Novak"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1981"
+}

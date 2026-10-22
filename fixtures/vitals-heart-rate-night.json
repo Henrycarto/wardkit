@@ -1,0 +1,1027 @@
+{
+  "resourceType": "Bundle",
+  "id": "vitals-heart-rate-night",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-20-1800",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-20-1800",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 88 /min at 2026-10-20T18:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-20T18:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 88,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-20-1900",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-20-1900",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 89 /min at 2026-10-20T19:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-20T19:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 89,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-20-2000",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-20-2000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 90 /min at 2026-10-20T20:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-20T20:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 90,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-20-2100",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-20-2100",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 90 /min at 2026-10-20T21:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-20T21:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 90,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-20-2200",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-20-2200",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate not measured at 2026-10-20T22:00:00+02:00: probe off.</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-20T22:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "dataAbsentReason": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+              "code": "error",
+              "display": "Error"
+            }
+          ],
+          "text": "Probe off, no valid reading"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-20-2300",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-20-2300",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 90 /min at 2026-10-20T23:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-20T23:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 90,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-20-2330",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-20-2330",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 104 /min at 2026-10-20T23:30:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-20T23:30:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 104,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0000",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 112 /min at 2026-10-21T00:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T00:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 112,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0020",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0020",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 118 /min at 2026-10-21T00:20:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T00:20:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 118,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0100",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0100",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 124 /min at 2026-10-21T01:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T01:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 124,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0145",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0145",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 116 /min at 2026-10-21T01:45:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T01:45:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 116,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0200",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0200",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate at 2026-10-21T02:00:00+02:00 entered in error (wrong patient).</div>"
+        },
+        "status": "entered-in-error",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T02:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 160,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0300",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0300",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 108 /min at 2026-10-21T03:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T03:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 108,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0600",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0600",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 98 /min at 2026-10-21T06:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T06:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 98,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hr-21-0700",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hr-21-0700",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/heartrate"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart rate 96 /min at 2026-10-21T07:00:00+02:00</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/huber"
+        },
+        "effectiveDateTime": "2026-10-21T07:00:00+02:00",
+        "performer": [
+          {
+            "display": "Ward 4B nurse (fictional)"
+          }
+        ],
+        "valueQuantity": {
+          "value": 96,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 51,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "high": {
+              "value": 90,
+              "unit": "/min",
+              "system": "http://unitsofmeasure.org",
+              "code": "/min"
+            },
+            "text": "NEWS2 zero-score band"
+          }
+        ]
+      }
+    }
+  ]
+}

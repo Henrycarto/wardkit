@@ -1,0 +1,77 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "wardkit",
+  "homepage": "https://github.com/Henrycarto/wardkit",
+  "items": [
+    {
+      "name": "wardkit-fhir",
+      "type": "registry:lib",
+      "title": "FHIR helpers",
+      "description": "Coding, quantity and time helpers shared by the wardkit components.",
+      "devDependencies": ["@types/fhir"],
+      "files": [{ "path": "registry/wardkit/lib/fhir.ts", "type": "registry:lib", "target": "lib/wardkit/fhir.ts" }]
+    },
+    {
+      "name": "wardkit-news2",
+      "type": "registry:lib",
+      "title": "NEWS2 scoring",
+      "description": "NEWS2 (RCP 2017) scoring and the rules for reading its inputs from FHIR R4 Observations.",
+      "devDependencies": ["@types/fhir"],
+      "registryDependencies": ["https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/wardkit-fhir.json"],
+      "files": [{ "path": "registry/wardkit/lib/news2.ts", "type": "registry:lib", "target": "lib/wardkit/news2.ts" }]
+    },
+    {
+      "name": "lab-result",
+      "type": "registry:component",
+      "title": "LabResult",
+      "description": "One lab result from a FHIR Observation: value, unit, reference range, interpretation flag and status.",
+      "dependencies": ["lucide-react"],
+      "devDependencies": ["@types/fhir"],
+      "registryDependencies": ["utils", "https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/wardkit-fhir.json"],
+      "files": [{ "path": "registry/wardkit/components/lab-result.tsx", "type": "registry:component", "target": "components/wardkit/lab-result.tsx" }]
+    },
+    {
+      "name": "vitals-trend",
+      "type": "registry:component",
+      "title": "VitalsTrend",
+      "description": "An SVG trend of one vital sign from FHIR Observations. Gaps break the line; nothing is interpolated.",
+      "devDependencies": ["@types/fhir"],
+      "registryDependencies": ["utils", "https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/wardkit-fhir.json"],
+      "files": [{ "path": "registry/wardkit/components/vitals-trend.tsx", "type": "registry:component", "target": "components/wardkit/vitals-trend.tsx" }]
+    },
+    {
+      "name": "news2-panel",
+      "type": "registry:component",
+      "title": "News2Panel",
+      "description": "NEWS2 from FHIR Observations, or a clear statement of which parameter is missing.",
+      "dependencies": ["lucide-react"],
+      "devDependencies": ["@types/fhir"],
+      "registryDependencies": [
+        "utils",
+        "https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/wardkit-fhir.json",
+        "https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/wardkit-news2.json"
+      ],
+      "files": [{ "path": "registry/wardkit/components/news2-panel.tsx", "type": "registry:component", "target": "components/wardkit/news2-panel.tsx" }]
+    },
+    {
+      "name": "allergy-banner",
+      "type": "registry:component",
+      "title": "AllergyBanner",
+      "description": "Allergies from FHIR AllergyIntolerance, with \"no known allergies\" kept apart from \"not recorded\".",
+      "dependencies": ["lucide-react"],
+      "devDependencies": ["@types/fhir"],
+      "registryDependencies": ["utils", "https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/wardkit-fhir.json"],
+      "files": [{ "path": "registry/wardkit/components/allergy-banner.tsx", "type": "registry:component", "target": "components/wardkit/allergy-banner.tsx" }]
+    },
+    {
+      "name": "patient-banner",
+      "type": "registry:component",
+      "title": "PatientBanner",
+      "description": "Name, date of birth with age, administrative gender and main identifier from a FHIR Patient.",
+      "dependencies": ["lucide-react"],
+      "devDependencies": ["@types/fhir"],
+      "registryDependencies": ["utils", "https://raw.githubusercontent.com/Henrycarto/wardkit/main/public/r/wardkit-fhir.json"],
+      "files": [{ "path": "registry/wardkit/components/patient-banner.tsx", "type": "registry:component", "target": "components/wardkit/patient-banner.tsx" }]
+    }
+  ]
+}

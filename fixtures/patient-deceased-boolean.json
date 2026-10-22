@@ -1,0 +1,23 @@
+{
+  "resourceType": "Patient",
+  "id": "gruber",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Franz Gruber (fictional), male, born 1944. Recorded as deceased, date not recorded.</div>"
+  },
+  "identifier": [
+    {
+      "system": "https://github.com/Henrycarto/wardkit/fixtures/sid/mrn",
+      "value": "W4B-000102"
+    }
+  ],
+  "name": [
+    {
+      "given": ["Franz"],
+      "family": "Gruber"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1944-11-08",
+  "deceasedBoolean": true
+}

@@ -1,0 +1,21 @@
+{
+  "resourceType": "Patient",
+  "id": "unknown-arrival",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Unidentified arrival (fictional). No birth date. Temporary number only.</div>"
+  },
+  "identifier": [
+    {
+      "use": "temp",
+      "value": "ED-TEMP-0042"
+    }
+  ],
+  "name": [
+    {
+      "use": "temp",
+      "text": "Unknown, female, Emergency Department arrival 21 Oct"
+    }
+  ],
+  "gender": "unknown"
+}

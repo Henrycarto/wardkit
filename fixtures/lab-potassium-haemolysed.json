@@ -1,0 +1,67 @@
+{
+  "resourceType": "Observation",
+  "id": "lab-potassium-haemolysed",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Potassium not reported: sample haemolysed.</div>"
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "2823-3",
+        "display": "Potassium [Moles/volume] in Serum or Plasma"
+      }
+    ],
+    "text": "Potassium"
+  },
+  "subject": {
+    "reference": "Patient/huber"
+  },
+  "effectiveDateTime": "2026-10-21T00:40:00+02:00",
+  "issued": "2026-10-21T01:05:00+02:00",
+  "performer": [
+    {
+      "display": "Ward 4B laboratory (fictional)"
+    }
+  ],
+  "dataAbsentReason": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "code": "error",
+        "display": "Error"
+      }
+    ],
+    "text": "Sample haemolysed, potassium not reported. Repeat sample requested."
+  },
+  "referenceRange": [
+    {
+      "low": {
+        "value": 3.5,
+        "unit": "mmol/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "mmol/L"
+      },
+      "high": {
+        "value": 5.1,
+        "unit": "mmol/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "mmol/L"
+      },
+      "text": "Adult"
+    }
+  ]
+}

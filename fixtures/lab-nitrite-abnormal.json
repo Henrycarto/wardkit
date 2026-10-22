@@ -1,0 +1,66 @@
+{
+  "resourceType": "Observation",
+  "id": "lab-nitrite-abnormal",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Urine nitrite positive, abnormal. Final.</div>"
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "5802-4",
+        "display": "Nitrite [Presence] in Urine by Test strip"
+      }
+    ],
+    "text": "Urine nitrite"
+  },
+  "subject": {
+    "reference": "Patient/huber"
+  },
+  "effectiveDateTime": "2026-10-21T00:40:00+02:00",
+  "issued": "2026-10-21T01:05:00+02:00",
+  "performer": [
+    {
+      "display": "Ward 4B laboratory (fictional)"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "LA6576-8",
+        "display": "Positive"
+      }
+    ],
+    "text": "Positive"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "A",
+          "display": "Abnormal"
+        }
+      ]
+    }
+  ],
+  "referenceRange": [
+    {
+      "text": "Negative"
+    }
+  ]
+}

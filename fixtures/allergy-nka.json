@@ -1,0 +1,39 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "nka",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">No known allergy.</div>"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "716186003",
+        "display": "No known allergy"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/huber"
+  },
+  "recordedDate": "2026-10-19T14:40:00+02:00"
+}

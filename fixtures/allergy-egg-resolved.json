@@ -1,0 +1,60 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "egg-resolved",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Egg allergy in childhood, resolved.</div>"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "resolved",
+        "display": "Resolved"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "type": "allergy",
+  "category": [
+    "food"
+  ],
+  "criticality": "low",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "102263004",
+        "display": "Eggs (edible)"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/huber"
+  },
+  "recordedDate": "2026-10-19T14:40:00+02:00",
+  "reaction": [
+    {
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271807003",
+              "display": "Eruption"
+            }
+          ],
+          "text": "Rash"
+        }
+      ]
+    }
+  ]
+}
