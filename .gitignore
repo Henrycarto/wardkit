@@ -16,3 +16,6 @@ validation.json
 # Playwright
 test-results/
 playwright-report/
+
+# Private interview notes
+INTERVIEW_NOTES.md
